@@ -11,7 +11,6 @@ export default function Movie(props) {
 }
 
 const Item = styled.li`
-  list-style: none;
   width: 145px;
   padding: 8px;
   box-sizing: border-box;

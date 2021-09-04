@@ -1,5 +1,3 @@
-import { Fragment } from "react";
-
 import { createGlobalStyle } from "styled-components";
 
 import { BrowserRouter, Switch, Route } from "react-router-dom";
@@ -12,7 +10,7 @@ import Success from "./Success/Success";
 
 export default function App() {
   return (
-    <Fragment>
+    <>
       <GlobalStyle />
       <BrowserRouter>
         <Header />
@@ -34,7 +32,7 @@ export default function App() {
           </Route>
         </Switch>
       </BrowserRouter>
-    </Fragment>
+    </>
   );
 }
 
@@ -49,5 +47,13 @@ const GlobalStyle = createGlobalStyle`
 
 body {
     font-family: 'Roboto', sans-serif;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
 }
 `;
