@@ -1,9 +1,11 @@
 import { Link } from "react-router-dom";
 
 export default function Showtime({ showtime }) {
+  const { id, name } = showtime;
+
   return (
-    <li>
-      <Link to="/">{showtime.name}</Link>
-    </li>
+    <Link to={"/sessao/" + id}>
+      <li>{name}</li>
+    </Link>
   );
 }

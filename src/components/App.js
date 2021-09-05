@@ -1,6 +1,7 @@
 import { createGlobalStyle } from "styled-components";
 
 import { BrowserRouter, Switch, Route } from "react-router-dom";
+import Helmet from "react-helmet";
 
 import Reset from "./reset";
 import Header from "./Header/Header";
@@ -12,8 +13,18 @@ import Success from "./Success/Success";
 export default function App() {
   return (
     <>
+      <Helmet>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Roboto:ital@0;1&display=swap"
+          rel="stylesheet"
+        />
+      </Helmet>
+
       <Reset />
       <GlobalStyle />
+
       <BrowserRouter>
         <Header />
         <Switch>
@@ -39,7 +50,6 @@ export default function App() {
 }
 
 const GlobalStyle = createGlobalStyle`
-  @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
   * {
       box-sizing: border-box;

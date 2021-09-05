@@ -1,4 +1,4 @@
-import { Page, Title, Container, Footer, Frame, FlexBottom } from "../style";
+import { Page, Title, Container } from "../style";
 
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
@@ -6,6 +6,7 @@ import axios from "axios";
 import styled from "styled-components";
 
 import Day from "./Day";
+import BottomBar from "../BottomBar";
 
 export default function Showtimes() {
   const { idMovie } = useParams();
@@ -35,16 +36,9 @@ export default function Showtimes() {
             </Days>
           </Container>
 
-          <Footer>
-            <Container>
-              <FlexBottom>
-                <Frame>
-                  <img src={movie.posterURL} alt={movie.title} />
-                </Frame>
-                <p>{movie.title}</p>
-              </FlexBottom>
-            </Container>
-          </Footer>
+          <BottomBar posterURL={movie.posterURL} title={movie.title}>
+            <p>{movie.title}</p>
+          </BottomBar>
         </>
       ) : null}
     </Page>

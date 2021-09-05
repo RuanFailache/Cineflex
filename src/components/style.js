@@ -36,8 +36,8 @@ const Footer = styled.footer`
   border-top: solid 1px #9eadba;
 
   p {
-    font-size: 26px;
-    line-height: 31px;
+    font-size: 20px;
+    line-height: 24px;
     font-weight: 400;
     color: #293845;
   }

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
-export default function Movie(props) {
-  const { posterURL, title } = props.movie;
+export default function Movie({ movie }) {
+  const { posterURL, title } = movie;
 
   return (
     <Item>
