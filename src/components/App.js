@@ -2,6 +2,7 @@ import { createGlobalStyle } from "styled-components";
 
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 
+import Reset from "./reset";
 import Header from "./Header/Header";
 import Poster from "./Poster/Poster";
 import Showtimes from "./Showtimes/Showtimes";
@@ -11,6 +12,7 @@ import Success from "./Success/Success";
 export default function App() {
   return (
     <>
+      <Reset />
       <GlobalStyle />
       <BrowserRouter>
         <Header />
@@ -37,23 +39,17 @@ export default function App() {
 }
 
 const GlobalStyle = createGlobalStyle`
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
+  * {
+      box-sizing: border-box;
+  }
 
-body {
-    font-family: 'Roboto', sans-serif;
-}
+  body {
+      font-family: 'Roboto', sans-serif;
+  }
 
-li {
-    list-style: none;
-}
-
-a {
+  a {
     text-decoration: none;
-}
+  }
 `;
