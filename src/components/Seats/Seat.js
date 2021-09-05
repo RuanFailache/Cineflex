@@ -16,7 +16,7 @@ export default function Seat({ seat, selectedSeats, setSelectedSeats }) {
 
   function selectSeat(e) {
     if (seat.isAvailable) {
-      if (colors.color == free.color) {
+      if (colors.color === free.color) {
         setColors({ ...selected });
         e.target.classList.add("selected");
       } else {

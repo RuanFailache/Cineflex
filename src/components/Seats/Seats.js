@@ -1,5 +1,5 @@
 import { Page, Title, Container } from "../style";
-import { Circle, Flex, Form } from "./style-seat";
+import { Circle, Flex } from "./style-seat";
 import Seat from "./Seat";
 import UserForm from "./UserForm";
 import BottomBar from "../BottomBar";
@@ -18,10 +18,10 @@ export default function Seats() {
       .get(
         `https://mock-api.bootcamp.respondeai.com.br/api/v3/cineflex/showtimes/${idSession}/seats`
       )
-      .then((res) => setInfo({ ...res.data }));
+      .then((res) => {
+        setInfo({ ...res.data });
+      });
   }, []);
-
-  console.log(selectedSeats);
 
   return (
     <Page>
@@ -59,11 +59,7 @@ export default function Seats() {
             </li>
           </Flex>
 
-          <UserForm
-            idSection={idSession}
-            info={info}
-            selectedSeats={selectedSeats}
-          />
+          <UserForm selectedSeats={selectedSeats} />
 
           <BottomBar posterURL={info.movie.posterURL} title={info.movie.title}>
             <p>{info.movie.title}</p>

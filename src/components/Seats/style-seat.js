@@ -43,9 +43,9 @@ const Form = styled.form`
 
   label,
   input,
-  button {
+  a {
     display: block;
-    font-size: 13px;
+    font-size: 18px;
     line-height: 21px;
     font-weight: 400;
   }
@@ -68,9 +68,13 @@ const Form = styled.form`
     outline: none;
   }
 
-  button {
+  a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin: 30px auto 0;
-    padding: 7px 15px;
+    width: 225px;
+    height: 42px;
     border: none;
     border-radius: 3px;
     letter-spacing: 4%;
