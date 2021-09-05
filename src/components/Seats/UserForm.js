@@ -4,16 +4,27 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import { useState } from "react";
 
-export default function UserForm({ selectedSeats }) {
+export default function UserForm({ selectedSeats, info, setInfos }) {
   const [name, setName] = useState("");
   const [cpf, setCpf] = useState("");
 
-  const ids = selectedSeats.map((seat) => seat.id);
-
   function chooseSeats() {
+    setInfos({
+      title: info.movie.title,
+      date: info.day.date,
+      hour: info.name,
+      name: name,
+      cpf: cpf,
+      seats: selectedSeats.map((seat) => seat.name),
+    });
+
     axios.post(
       "https://mock-api.bootcamp.respondeai.com.br/api/v3/cineflex/seats/book-many",
-      { ids, name, cpf }
+      {
+        ids: selectedSeats.map((seat) => seat.id),
+        name,
+        cpf,
+      }
     );
   }
 

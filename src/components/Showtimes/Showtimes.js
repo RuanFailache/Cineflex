@@ -22,7 +22,7 @@ export default function Showtimes() {
 
   return (
     <Page>
-      <Title>
+      <Title weight="400" color="#293845">
         <h2>Selecione o horário</h2>
       </Title>
 

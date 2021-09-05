@@ -8,7 +8,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 
-export default function Seats() {
+export default function Seats({ setInfos }) {
   const { idSession } = useParams();
   const [info, setInfo] = useState(null);
   const [selectedSeats, setSelectedSeats] = useState([]);
@@ -25,7 +25,7 @@ export default function Seats() {
 
   return (
     <Page>
-      <Title>
+      <Title weight="400" color="#293845">
         <h2>Selecione o(s) assento(s)</h2>
       </Title>
 
@@ -59,7 +59,11 @@ export default function Seats() {
             </li>
           </Flex>
 
-          <UserForm selectedSeats={selectedSeats} />
+          <UserForm
+            selectedSeats={selectedSeats}
+            info={info}
+            setInfos={setInfos}
+          />
 
           <BottomBar posterURL={info.movie.posterURL} title={info.movie.title}>
             <p>{info.movie.title}</p>

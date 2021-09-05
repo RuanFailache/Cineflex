@@ -18,7 +18,7 @@ export default function Poster() {
 
   return (
     <Page>
-      <Title>
+      <Title weight="400" color="#293845">
         <h2>Selecione o filme</h2>
       </Title>
 

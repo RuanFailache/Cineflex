@@ -13,9 +13,10 @@ const Title = styled.div`
   h2 {
     font-size: 24px;
     line-height: 28px;
-    font-weight: 400;
+    font-weight: ${(props) => props.weight};
     letter-spacing: 4%;
-    color: #293845;
+    color: ${(props) => props.color};
+    text-align: center;
   }
 `;
 
